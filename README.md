@@ -8,7 +8,6 @@
 	<a href="https://github.com/DoiiarX/NLCISBNPlugin" target="_blank"><img src="https://img.shields.io/github/last-commit/DoiiarX/NLCISBNPlugin.svg"></a>
 </p>
 <p align="center">
-	<a href="https://github.com/DoiiarX/NLCISBNPlugin" target="_blank"><img src="https://visitor-badge.glitch.me/badge?page_id=DoiiarX.NLCISBNPlugin"></a>
 	<a href="https://github.com/DoiiarX/NLCISBNPlugin/releases" target="_blank"><img src="https://img.shields.io/github/release/DoiiarX/NLCISBNPlugin.svg"></a>
 	<a href="https://deepscan.io/dashboard#view=project&tid=22929&pid=26210&bid=830826"><img src="https://deepscan.io/api/teams/22929/projects/26210/branches/830826/badge/grade.svg" alt="DeepScan grade"></a>
 </p>
