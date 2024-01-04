@@ -1,6 +1,6 @@
 # 🏠中国国家图书馆ISBN Calibre Metadata 源插件
 
-该项目是一个用于 [Calibre](https://calibre-ebook.com/) 电子书管理软件的元数据源插件，旨在从[中国国家图书馆](http://opac.nlc.cn/F)获取图书信息，特别是基于ISBN。此插件允许用户轻松地将图书信息添加到其Calibre库中，包括书名、作者、出版日期等重要信息。
+该项目是一个用于 [Calibre](https://calibre-ebook.com/) 电子书管理软件的元数据源插件，旨在从[中国国家图书馆](http://opac.nlc.cn/F)获取图书信息，特别是基于ISBN。此插件允许用户轻松地将图书信息添加到其Calibre库中，包括书名、作者、出版日期、中图分类号等重要信息。
 
 <p align="center">
 	<a href="https://github.com/DoiiarX/NLCISBNPlugin/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/DoiiarX/NLCISBNPlugin.svg"></a>
@@ -28,6 +28,7 @@
 ## 🔍功能特点
 
 - **自动元数据检索**：通过ISBN，自动从中国国家图书馆获取图书元数据。
+- **支持中图分类号**：目前唯一能获取中图分类号的Calibre插件。
 
 ## 🌟返回结果示例
 ![image](https://github.com/DoiiarX/NLCISBNPlugin/assets/25550075/e6906459-0457-4c8c-a872-d7eda2d8beff)
