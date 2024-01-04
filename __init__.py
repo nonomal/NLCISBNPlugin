@@ -42,13 +42,15 @@ def get_dynamic_url(log):
         log(f"获取动态URL时出错: {e}")
         return None
 
-def isbn2meta(isbn, log):
+def isbn2meta(title=None,isbn=None, log):
     '''
     将ISBN转换为元数据。
     :param isbn: ISBN号码，作为字符串。
     :param log: 日志记录器。
     :return: 解析后的元数据或None（获取失败时）。
     '''
+    if (not isbn) and (not title):
+      return
     if not isinstance(isbn, str):
         log("ISBN必须是字符串")
         raise TypeError("ISBN必须是字符串")
@@ -181,13 +183,25 @@ class NLCISBNPlugin(Source):
 
     def identify(self, log, result_queue, abort, title=None, authors=None, identifiers={}, timeout=30):
         isbn = identifiers.get('isbn', '')
-        if not isbn:
-            return
-
-        metadata = isbn2meta(isbn, log)
-        log('下载元数据:', metadata)
-        if metadata:
-            result_queue.put(metadata)
+      
+        # 根据isbn获取metadata
+        metadata = None
+        if isbn:
+          metadata = isbn2meta(isbn=isbn, log)
+          log('下载元数据:', metadata)
+          if metadata:
+              result_queue.put(metadata)
+          
+        # 根据书名获取metadata
+        metadata = None
+        if title:
+          metadata = isbn2meta(title=title, log)
+          log('下载元数据:', metadata)
+          if isinstance(metadata, list):
+            for item in metadata:
+              result_queue.put(item)
+          if isinstance(metadata, dict):
+              result_queue.put(metadata)
 
     def download_cover(self, log, result_queue, abort, title=None, authors=None, identifiers={}, timeout=30, get_best_cover=False):
         return
